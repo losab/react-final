@@ -20,7 +20,7 @@ export const CategoryProductList = () => {
   }, [sort]);
   useEffect(() => {
     fetchCategoryProducts(
-      `${categoryName}?page=1&size=1&sort=price,descending`
+      `${categoryName}?page=${page || 1}&size=1&sort=price,descending`
     );
   }, [categoryName, page, sort]);
   return (

@@ -9,6 +9,7 @@ export const saveProduct = createAsyncThunk(
       const endpoint = isUpdating ? `/products/${id}` : "/products";
       const method = isUpdating ? "put" : "post";
       const { data } = await axiosInstance[method](endpoint, { product });
+      dispatch(fetchHomePageProducts());
       return data;
     } catch (error) {
       return rejectWithValue("could not save product");
